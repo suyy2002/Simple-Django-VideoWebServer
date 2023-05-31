@@ -1,4 +1,4 @@
-# 一个简单的Django视频网站后端
+# 一个Django视频网站后端
 
 ## 项目介绍
 
@@ -46,7 +46,24 @@
 pip install -r requirements.txt
 ```
 
-### 2. 数据库迁移
+### 2. 配置数据库
+
+在`WebServer/settings.py`中配置数据库
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '数据库名',
+        'USER': '用户名',
+        'PASSWORD': '密码',
+        'HOST': 'host地址',
+        'PORT': '端口',
+    }
+}
+```
+
+### 3. 数据库迁移
 
 ```
 python manage.py makemigrations
@@ -56,13 +73,13 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 3. 创建超级用户
+### 4. 创建超级用户
 
 ```
 python manage.py createsuperuser
 ```
 
-### 4. 运行项目
+### 5. 运行项目
 
 ```
 python manage.py runserver
